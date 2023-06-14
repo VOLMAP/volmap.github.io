@@ -1,5 +1,3 @@
-TODO: add section on how to contribute
-
 # VOLMAP: a Large Scale Benchmark for Volume Mappings to Simple Base Domains
 
 <p align="center"><img src="teaser.png"></p>
