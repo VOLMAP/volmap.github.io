@@ -4,7 +4,10 @@
 
 VOLMAP is a large scale benchmark aimed to support ongoing research in volume mapping algorithms. The dataset contains **4.7K tetrahedral meshes**, whose boundary vertices are mapped to a variety of simple domains, either convex or star-shaped. This data constitutes the input for candidate algorithms, which are then required to position interior vertices in the domain to obtain a volume map. Overall, this yields **more than 22K alternative test cases**. VOLMAP also comprises tools to process this data, analyze the resulting maps, and extend the dataset with new meshes, boundary maps and base domains.
 
-Dataset and tools are described in details in the article "[***VOLMAP: a Large Scale Benchmark for Volume Mappings to Simple Base Domains***]()" (G. Cherchi and M. Livesu).
+Dataset and tools are described in details in the article:<br>
+[***VOLMAP: a Large Scale Benchmark for Volume Mappings to Simple Base Domains***]()<br>
+Computer Graphics Forum (SGP 2023)<br>
+G. Cherchi and M. Livesu<br>
 
 
 ## Dataset
