@@ -114,6 +114,10 @@ a{
   border-bottom-color: #1e76b0;
 }
 
+a:visited{
+  color: #1e76b0;
+}
+
 a:hover {
   color: #0026ff;
 }
