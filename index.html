@@ -1,10 +1,229 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>VOLMAP</title>
-    </head>
-    <body>
-        <h1>VOLMAP: a Large Scale Benchmark for Volume Mappings to Simple Base Domains</h1>
-        <p>Available soon...</p>
-    </body>
+<html lang="en">
+  <head>
+    <title>VOLMAP</title>
+    <meta name="author" content="Gianmarco Cherchi and Marco Livesu">
+    <meta name="keywords" content="VOLMAP: a Large Scale Benchmark for Volume Mappings to Simple Base Domains" />
+    <meta name="description" content="VOLMAP: a Large Scale Benchmark for Volume Mappings to Simple Base Domains">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  
+  <body>
+    
+    <div id="main-container"> 
+      
+      <header>
+        <h1 id="main-title" class="main-title-center">VOLMAP: a Large Scale Benchmark for Volume Mappings to Simple Base Domains</h1>
+      </header>
+
+      <div>
+        <img src="teaser.png" id="teaser" alt="VOLMAP teaser" width="100%">
+      
+        <p id="info">
+          VOLMAP is a large scale benchmark aimed to support ongoing research in volume mapping algorithms. 
+          The dataset contains <strong>4.7K tetrahedral meshes</strong>, whose boundary vertices are mapped to a variety of simple domains, 
+          either convex or star-shaped. This data constitutes the input for candidate algorithms, which are then required to 
+          position interior vertices in the domain to obtain a volume map. Overall, this yields <strong>more than 22K alternative test cases</strong>. 
+          VOLMAP also comprises tools to process this data, analyze the resulting maps, and extend the dataset with new meshes, 
+          boundary maps and base domains.
+        </p>
+
+        <p class="info">Dataset and tools are described in details in the article:</p>
+         
+        <p class="info"><a href="https://www.gianmarcocherchi.com/pdf/volmap.pdf" class="custom-link" target="_blank"><strong>VOLMAP: a Large Scale Benchmark for Volume Mappings to Simple Base Domains</strong></a></p>
+
+        <p class="info">Computer Graphics Forum (SGP 2023)</p>
+        
+        <p class="info"><a href="https://www.gianmarcocherchi.com/" class="custom-link" target="_blank">Gianmarco Cherchi</a> and 
+          <a href="http://pers.ge.imati.cnr.it/livesu/" class="custom-link">Marco Livesu</a></p>
+
+      </div>
+
+      <article>
+        <h2 class="websection">Dataset</h2>
+
+        <p class="info">The table below summmarizes the structure of the dataset, which consists of approximately 10 Gigabytes of compressed files.</p>
+
+        <table>
+          <tr>
+              <th><b>Group</b></th>
+              <th><b>Meshes</b></th>
+              <th><b>Cube</b></th>
+              <th><b>Tet</b></th>
+              <th><b>Pyramid</b></th>
+              <th><b>Octa</b></th>
+              <th><b>Star</b></th>
+              <th><b>Sphere</b></th>
+              <th><b>Polycube</b></th>
+              <th><b>Test pairs</b></th>
+          </tr>
+          <tr>
+              <td>G1</td>
+              <td>25</td>
+              <td>25</td>
+              <td>24</td>
+              <td>25</td>
+              <td>24</td>
+              <td>25</td>
+              <td>-</td>
+              <td>-</td>
+              <td>123</td>
+          </tr>
+          <tr>
+              <td>G2</td>
+              <td>67</td>
+              <td>67</td>
+              <td>66</td>
+              <td>66</td>
+              <td>67</td>
+              <td>67</td>
+              <td>-</td>
+              <td>-</td>
+              <td>333</td>
+          </tr>
+          <tr>
+              <td>G3</td>
+              <td>1942</td>
+              <td>1932</td>
+              <td>1919</td>
+              <td>1926</td>
+              <td>1934</td>
+              <td>1924</td>
+              <td>-</td>
+              <td>-</td>
+              <td>9635</td>
+          </tr>
+          <tr>
+              <td>G4</td>
+              <td>2633</td>
+              <td>2607</td>
+              <td>2366</td>
+              <td>2460</td>
+              <td>2477</td>
+              <td>2611</td>
+              <td>-</td>
+              <td>-</td>
+              <td>12521</td>
+          </tr>
+          <tr>
+              <td>G5</td>
+              <td>26</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>26</td>
+              <td>-</td>
+              <td>26</td>
+          </tr>
+          <tr>
+              <td>G6</td>
+              <td>4</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>4</td>
+              <td>4</td>
+          </tr>
+          <tr>
+              <td><i>TOT</i></td>
+              <td><i>4697</i></td>
+              <td><i>4631</i></td>
+              <td><i>4375</i></td>
+              <td><i>4477</i></td>
+              <td><i>4502</i></td>
+              <td><i>4627</i></td>
+              <td><i>26</i></td>
+              <td><i>4</i></td>
+              <td><i>22642</i></td>
+          </tr>
+      </table>
+
+      <p class="info">To simplify download operations we have split the dataset into separated chunks, grouped w.r.t. 
+        the origin of the input models and the domain onto which the surface was mapped. Check Section 3 in the paper for 
+        more details about mesh sources, folder organization and file structures.</p>
+
+      <p class="info">
+        <h3>Download links:</h3>
+      </p>
+
+      <p>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G1/G1.zip" class="data" target="_blank">[G1.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G1/G1_cube.zip" class="data" target="_blank">[G1_cube.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G1/G1_tet.zip" class="data" target="_blank">[G1_tet.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G1/G1_pyr.zip" class="data" target="_blank">[G1_pyr.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G1/G1_octa.zip" class="data" target="_blank">[G1_octa.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G1/G1_star.zip" class="data" target="_blank">[G1_star.zip]</a>
+      </p>  
+
+      <p>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G2/G2.zip" class="data" target="_blank">[G2.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G2/G2_cube.zip" class="data" target="_blank">[G2_cube.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G2/G2_tet.zip" class="data" target="_blank">[G2_tet.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G2/G2_pyr.zip" class="data" target="_blank">[G2_pyr.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G2/G2_octa.zip" class="data" target="_blank">[G2_octa.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G2/G2_star.zip" class="data" target="_blank">[G2_star.zip]</a>
+      </p>  
+
+      <p>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G3/G3.zip" class="data" target="_blank">[G3.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G3/G3_cube.zip" class="data" target="_blank">[G3_cube.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G3/G3_tet.zip" class="data" target="_blank">[G3_tet.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G3/G3_pyr.zip" class="data" target="_blank">[G3_pyr.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G3/G3_octa.zip" class="data" target="_blank">[G3_octa.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G3/G3_star.zip" class="data" target="_blank">[G3_star.zip]</a>
+      </p> 
+
+      <p>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G4/G4.zip" class="data" target="_blank">[G4.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G4/G4_cube.zip" class="data" target="_blank">[G4_cube.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G4/G4_tet.zip" class="data" target="_blank">[G4_tet.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G4/G4_pyr.zip" class="data" target="_blank">[G4_pyr.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G4/G4_octa.zip" class="data" target="_blank">[G4_octa.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G4/G4_star.zip" class="data" target="_blank">[G4_star.zip]</a>
+      </p> 
+
+      <p>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G5/G5.zip" class="data" target="_blank">[G5.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G5/G5_sphere.zip" class="data" target="_blank">[G5_sphere.zip]</a>
+      </p> 
+
+      <p>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G6/G6.zip" class="data" target="_blank">[G6.zip]</a>
+        <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G6/G6_pc.zip" class="data" target="_blank">[G6_pc.zip]</a>
+      </p> 
+      
+
+    </article>
+
+
+      <article>
+
+        <h2 class="websection">Auxiliary Code</h2>
+
+        
+
+      </article>
+
+      <footer>
+        <div>- Gianmarco Cherchi - </div>
+        <div>
+          <a href="https://github.com/gcherchi" class="custom-link" target="_blank">[GitHub]</a>
+          <a href="https://www.researchgate.net/profile/Gianmarco-Cherchi" class="custom-link" target="_blank">[ResearchGate]</a>
+          <a href="https://www.linkedin.com/in/gianmarco-cherchi-46a94a78/" class="custom-link" target="_blank">[Linkedin]</a>
+          <a href="https://www.unica.it/unica/page/en/gianmarco_cherchi" class="custom-link" target="_blank">[University page]</a>
+        </div>
+
+      </footer>
+
+    </div> 
+
+
+
+  </body>
 </html>
