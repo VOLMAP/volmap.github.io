@@ -47,7 +47,7 @@ header {
 #main-container {
   font-family: Oxygen, Arial, Helvetica, sans-serif;
   font-size: 16px;
-  width: 900px;
+  width: 1000px;
   padding-top: 10px;
   padding-bottom: 5px;
   margin-top: 7px;
@@ -160,7 +160,12 @@ h4{
 
 p.code{
   background-color: #f2f2f2;
-  font-family: Courier New;
+  font-family: 'Courier New', Courier, monospace;
   margin: 10px;
   padding: 10px;
+  border-left: 2px solid #d6d3d3;
+}
+
+span{
+  padding-left: 30px;
 }
