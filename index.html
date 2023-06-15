@@ -204,7 +204,7 @@
 
       <article>
 
-        <h2 class="websection">Auxiliary Code</h2>
+        <h2 class="websection">Auxiliary code</h2>
         
         <p class="info">
           VOLMAP includes a variety of facilities to ease the processing of the dataset, help assess the quality of its results
@@ -278,8 +278,92 @@
         <p class="code">
           ./surface_mapping_check &ltfilename.mesh&gt &ltsrf_mapping.txt&gt
         </p>
-        
 
+        <h4>Metrics</h4>
+
+        <p class="info">
+          <a href="https://github.com/VOLMAP/volmap.github.io/tree/main/metrics" class="custom-link" target="_blank">This tool</a> inputs the original tetmesh and its volume mapping computed with a candidate algorithm, and returns information regarding its validity and geometric distortion 
+          as described in the paper (see "<i>Metrics</i>" paragraph in Section 5 for more details). The syntax for using it is:
+        </p>
+
+        <p class="code">
+          ./metrics &lttetmesh.mesh&gt &ltvol_mapping.mesh&gt
+        </p>
+
+        <p class="info">
+          Since the used metrics may tend to infinite, imposing an upper bound on the maximum value may be required. 
+          By default, we set the max value to 100, but you can change it with the following syntax:
+        </p>
+
+        <p class="code">
+          ./metrics &lttetmesh.mesh&gt &ltvol_mapping.mesh&gt &ltupper_bound&gt
+        </p>
+        
+        <p class="info">
+          Finally, it is possible to specify a .csv log file in which to append the measured values. In this case, the syntax becomes:
+        </p>
+
+        <p class="code">
+          ./metrics &lttetmesh.mesh> &ltvol_mapping.mesh&gt &ltupper_bound&gt &ltlog_file.csv&gt
+        </p>
+
+        <h4>Map Visualization</h4>
+
+        <p class="info">
+          <a href="https://github.com/VOLMAP/volmap.github.io/tree/main/map_visualization" class="custom-link" target="_blank">This tool</a> can be used 
+          to visually inspect a volume mapping, plotting its inverted elements and color-coding tetrahdera according to some geometric 
+          distortion. All metrics described in the paper are supported and can be selected through the user interface 
+          (see "<i>Map visualization</i>" paragraph in Section 5 for more details). The syntax for using it is:
+        </p>
+
+        <p class="code">
+          ./map_visualization &lttetmesh.mesh&gt &ltvol_mapping.mesh&gt
+        </p>
+
+        <h4>Tetmeshing</h4>
+
+        <p class="info">
+          <a href="https://github.com/VOLMAP/volmap.github.io/tree/main/tetmesh_generation" class="custom-link" target="_blank">This tool</a> takes as input a surface 
+          mesh in .OBJ format and turn it into a tetrahedral mesh in .MESH format using <a href="https://wias-berlin.de/software/index.jsp?id=TetGen&lang=1" class="custom-link" target="_blank">Tetgen</a>. After using this tool, 
+          use the <a href="https://github.com/VOLMAP/volmap.github.io/tree/main/tetmesh_checks" class="custom-link" target="_blank">Tetmesh check tool</a> to verify that the generated mesh satisfies the VOLMAP requirements. The syntax for using it is:
+        </p>
+
+        <p class="code">
+          ./tetmesh_generation &ltsrf_mesh.obj&gt
+        </p>
+
+        <h4>Mesh format converter</h4>
+
+        <p class="info">
+          <a href="https://github.com/VOLMAP/volmap.github.io/tree/main/mesh_converter" class="custom-link" target="_blank">This tool</a> allows you to convert 
+          a model from .MESH format to .VTK format and vice versa. Before compiling it, you need to install the 
+          <a href="https://vtk.org/Wiki/VTK/Configure_and_Build" class="custom-link" target="_blank">VTK library</a>. 
+          The syntax for using it is one of the following:
+        </p>
+
+        <p class="code">
+          ./mesh_convertes &ltfilename.mesh&gt //OR <br>  
+          ./mesh_convertes &ltfilename.vtk&gt
+        </p>
+
+        <h4>Python Scripts</h4>
+
+        <p class="info">
+          In <a href="https://github.com/VOLMAP/volmap.github.io/tree/main/scripts" class="custom-link" target="_blank">this folder</a>, you 
+          can find several Python scripts to execute the aforementioned tools on large collections of shapes or to launch experiments 
+          with a given volume mapping algorithm. The description of each script is given as a comment at the top of each file.
+        </p>
+        
+      </article>
+
+      <article>
+        <h2 class="websection">Cyting us</h2>
+
+        <p class="info">
+          If you use our data or our code for your project, please cite our paper with the following BibTeX entry:
+        </p>
+
+        
       </article>
 
       <footer>
