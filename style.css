@@ -72,15 +72,10 @@ h2.websection {
   border-bottom-color: #999999;
   padding-bottom: 10px;
   margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-h5.papertitle {
-  margin-bottom: 3px;
-}
-
-.item {
-  margin-bottom: 10px;
-}
 
 #pic {
   float: none;
@@ -90,25 +85,10 @@ h5.papertitle {
   width: auto;
 }
 
-img.preview {
-  float: left;
-  margin-right: 15px;
-  border-radius: 7px;
-  border: 2px solid #717171;
-  width: 130px;
-}
-
-img.preview-pdf {
-  float: left;
-  margin-right: 15px;
-  border-radius: 7px;
-  border: 2px solid #717171;
-  width: 200px;
-}
 
 h1.main-title-center {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 40px;
+  font-size: 35px;
   text-align: center;
   line-height: 50px;
   padding-bottom: 20px;
@@ -117,10 +97,15 @@ h1.main-title-center {
 #info {
   text-align: justify;
   margin-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 p.info{
+  text-align: justify;
   margin-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 a.custom-link {
@@ -133,14 +118,6 @@ a:hover {
   color: #0026ff;
 }
 
-.award {
-  width: 20px;
-}
-
-.demo {
-  width: 50px;
-}
-
 
 footer {
   border-top-width: 1px;
@@ -150,25 +127,13 @@ footer {
   font-size: 15px;
 }
 
-.my-news{
-  margin-top: 20px;
-  margin-left: 3px;
-  margin-right: 3px;
-
-  border: 3px solid transparent;
-  border-radius: 7px;
-  padding: 7px;
-  display: block;
-
-  color: #856404;
-  background-color: #fff3cd;
-  border-color: #ffe187;
-}
 
 table{
   text-align: center;
   width: 100%;
   margin-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 th{
@@ -182,4 +147,20 @@ a.data {
   text-decoration-line:underline;
   font-weight: bold;
   border-bottom-color: #1e76b0;
+}
+
+h3{
+  padding-left: 10px;
+}
+
+h4{
+  margin-top: 30px;
+  padding-left: 10px;
+}
+
+p.code{
+  background-color: #f2f2f2;
+  font-family: Courier New;
+  margin: 10px;
+  padding: 10px;
 }
