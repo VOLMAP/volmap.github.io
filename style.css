@@ -143,8 +143,8 @@ a:hover {
 
 
 footer {
-  border-top-width: 2px;
-  border-top-style: dotted;
+  border-top-width: 1px;
+  border-top-style: solid;
   border-top-color: #999999;
   text-align: center;
   font-size: 15px;
