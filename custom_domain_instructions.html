@@ -21,11 +21,71 @@
         <h2 class="websection">How to map a tetmesh on a custom domain</h2>
 
         <p class="info">
-          <a href="https://github.com/VOLMAP/volmap.github.io/tree/main/surface_mapping" class="custom-link" target="_blank">The surface mapping tool</a> implements the graph embedding strategy described in Section 5 in the paper. The tool can also be used to map on simple custom domains not included in VOLMAP. To do so, users can provide an input file describing the abstract graph and its embedding. In this case, the syntax to call the command is:
+          <a href="https://github.com/VOLMAP/volmap.github.io/tree/main/surface_mapping"  target="_blank">The surface mapping tool</a> implements the graph embedding strategy described in Section 5 in the paper. The tool can also be used to map on simple custom domains not included in VOLMAP. To do so, users can provide an input file describing the abstract graph and its embedding. In this case, the syntax to call the command is:
         </p>
 
         <p class="code">
           ./surface_mapping_check CUSTOM &ltfilename.mesh&gt &ltsrf_mapping.txt&gt &ltcustom_domain.txt&gt
+        </p>
+
+        <p class="info">
+          <a href="https://github.com/VOLMAP/volmap.github.io/blob/main/surface_mapping/custom_triprism_domain.txt"  target="_blank">This file</a> shows an example of how to encode a custom domain for our tool (a triangular prism, in this case). In the file you need to encode 3 information:<br>
+            
+          - the nodes of the graph (vertices of the domain)<br>
+          - the arcs of the graph (segments of the domain)<br>
+          - the positions (coordinates) in which map the input surface vertices associated to the domain's node.<br>
+        </p>
+
+        <p class="info">
+          The graph nodes are encoded as corners (or combination of) the input model's bounding box, preceded by the letter "n", considering the following corner enumeration:
+        </p>
+
+        <img src="bbox_vertices.png" width="200px">
+
+        <p class="info">
+          Examples:
+        </p>
+
+        <p class="code">
+          // a node corresponding to the corner 0 of the bounding box<br>
+          n 0 
+        </p>
+
+        <p class="code">
+          // a node corresponding to the midpoint of the edge 1-5 of the bounding box<br>
+          n 1 5 
+        </p>
+
+        <p class="code">
+          // a node corresponding to the centroid of the face 4-5-6-7 of the bounfding box<br>
+          n 4 5 6 7
+        </p>
+
+        <p class="info">
+          The position in which map each domain corner is encoded with a line that starts with "nm" and follows with the x, y, and z coordinates. Note that the file must contain the same number of lines starting with "n" and "nm". Example:
+        </p>
+
+        <p class="code">
+          // a node corresponding to the midpoint of the edge 4-5 of the bounding box to map into <br>
+          // a point p(1.0, 7.5, 12.3)<br>
+          n 4 5<br>
+          nm 1.0 7.5 12.3
+        </p>
+
+        <p class="info">
+          Lastly, each graph arc is encoded in the file with a line starting with "a" followed by the indices of the 2 segment endpoints. Example:
+        </p>
+
+        <p class="code">
+          a 0 1<br>
+          a 1 2<br>
+          ...
+        </p>
+
+        <p class="info">
+          <strong>
+            WARNING: The tool assumes that the connectivity encoded in the file is correct, with only planar and convex faces. No checks are made about that.
+          </strong>
         </p>
 
                 

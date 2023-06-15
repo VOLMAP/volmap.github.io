@@ -108,7 +108,7 @@ p.info{
   padding-right: 10px;
 }
 
-a.custom-link {
+a{
   color: #1e76b0;
   text-decoration-line:underline;
   border-bottom-color: #1e76b0;
