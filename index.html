@@ -161,7 +161,7 @@
           </table>
 
           <p class="info">To simplify download operations we have split the dataset into separated chunks, grouped w.r.t. 
-            the origin of the input models and the domain onto which the surface was mapped. Check Section 3 in the paper for 
+            the origin of the input models and the domain onto which the surface was mapped. Check Sections 3 and 4 in the paper for 
             more details about mesh sources, folder organization and file structures.</p>
   
           <p class="info">
@@ -233,7 +233,7 @@
           </p>
 
           <p class="info">
-            To simplify download operations we have split the dataset into separated chunks, grouped w.r.t. the algoritm we used to compute maps. Check Section 3 in the paper for more details about the folder organization and file structures.
+            To simplify download operations we have split the dataset into separated chunks, grouped w.r.t. the algoritm we used to compute maps. Check Sections 3 and 4 in the paper for more details about the folder organization and file structures.
           </p>
 
           <p class="info">
@@ -271,7 +271,7 @@
         
         <p class="info">
           VOLMAP includes a variety of facilities to ease the processing of the dataset, help assessing the quality of its results
-           and also extending it with additional models, maps and base domains (see Section 5.1 in the paper for more details).
+           and also extending it with additional models, maps and base domains (see Section 6 in the paper for more details).
            Each tool described below has its own CMakeLists.txt file, and only depends on <a href="https://github.com/mlivesu/cinolib"  target="_blank">Cinolib</a>.
            Compiling each tool (unless otherwise described) simply consists of opening a terminal inside the tool folder and typing:
         </p>
@@ -289,7 +289,7 @@
           <a href="https://github.com/VOLMAP/volmap.github.io/tree/main/tetmesh_checks"  target="_blank">This tool</a> ensures that a tetrahedral mesh model.mesh satisfies the VOLMAP requirements to compute the surface mapping: 
           single connected component, genus zero, well structured surface (i.e., manifold, closed
           and self-intersections free). The tool also checks the mesh tetrahedra according to the VOLMAP convention 
-          (see Section 5.1 in the paper). If the input mesh follows an opposite convention, this tool flips all its elements, 
+          (see Sections 3 and 6 in the paper). If the input mesh follows an opposite convention, this tool flips all its elements, 
           saving a new file called <i>model_inv.mesh</i>. 
           The syntax for using it is:
         </p>
@@ -310,7 +310,7 @@
 
         <p class="info">
           <a href="https://github.com/VOLMAP/volmap.github.io/tree/main/surface_mapping"  target="_blank">This tool</a> implements the graph embedding strategy described in 
-          Section 5 in the paper, mapping an input tetrahedral mesh onto one of the VOLMAP base domains. The syntax for using it is:
+          Section 6 in the paper, mapping an input tetrahedral mesh onto one of the VOLMAP base domains. The syntax for using it is:
         </p>
 
         <p class="code">
@@ -376,7 +376,7 @@
 
         <p class="info">
           <a href="https://github.com/VOLMAP/volmap.github.io/tree/main/metrics"  target="_blank">This tool</a> inputs the original tetmesh and its volume mapping computed with a candidate algorithm, and returns information regarding its validity and geometric distortion 
-          as described in the paper (see "<i>Metrics</i>" paragraph in Section 5 for more details). The syntax for using it is:
+          as described in the paper (see "<i>Metrics</i>" paragraph in Section 6 for more details). The syntax for using it is:
         </p>
 
         <p class="code">
@@ -406,7 +406,7 @@
           <a href="https://github.com/VOLMAP/volmap.github.io/tree/main/map_visualization"  target="_blank">This tool</a> can be used 
           to visually inspect a volume mapping, plotting its inverted elements and color-coding tetrahdera according to some geometric 
           distortion. All metrics described in the paper are supported and can be selected through the user interface 
-          (see "<i>Map visualization</i>" paragraph in Section 5 for more details). The syntax for using it is:
+          (see "<i>Map visualization</i>" paragraph in Section 6 for more details). The syntax for using it is:
         </p>
 
         <p class="code">
