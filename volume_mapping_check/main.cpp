@@ -1,3 +1,36 @@
+/*****************************************************************************************
+ *              MIT License                                                              *
+ *                                                                                       *
+ * Copyright (c) 2024 Federico Meloni, Gianmarco Cherchi, Marco Livesu                   *
+ *                                                                                       *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this  *
+ * software and associated documentation files (the "Software"), to deal in the Software *
+ * without restriction, including without limitation the rights to use, copy, modify,    *
+ * merge, publish, distribute, sublicense, and/or sell copies of the Software, and to    *
+ * permit persons to whom the Software is furnished to do so, subject to the following   *
+ * conditions:                                                                           *
+ *                                                                                       *
+ * The above copyright notice and this permission notice shall be included in all copies *
+ * or substantial portions of the Software.                                              *
+ *                                                                                       *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,   *
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A         *
+ * PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT    *
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION     *
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE        *
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                                *
+ *                                                                                       *
+ * Authors:                                                                              *
+ *      Federico Meloni (federico.meloni3@unica.it)                                      *
+ *      https://www.federicheddu.github.io                                               *
+ *                                                                                       *
+ *      Gianmarco Cherchi (g.cherchi@unica.it)                                           *
+ *      https://www.gianmarcocherchi.com                                                 *
+ *                                                                                       *
+ *      Marco Livesu (marco.livesu@ge.imati.cnr.it)                                      *
+ *      http://pers.ge.imati.cnr.it/livesu/                                              *
+ * ***************************************************************************************/
+
 #include <cinolib/meshes/meshes.h>
 #include <cinolib/gl/glcanvas.h>
 #include <cinolib/gl/volume_mesh_controls.h>
@@ -167,7 +200,7 @@ std::pair<int, int> mapCheck(Tetmesh<> &input, Tetmesh<> &output, std::vector<CG
         orient_fp_output = orient3d(output.vert(poly[0]), output.vert(poly[1]), output.vert(poly[2]), output.vert(poly[3]));
         if(orient_fp_input * orient_fp_output <= 0) flips.first++;
         //get orient in rational (need at least output_rt)
-        if(output_rt.empty()) {
+        if(!output_rt.empty()) {
             //if there are no input rationals, the check is done between input floating point and output rationals
             if(!input_rt.empty())orient_rt_input = orient3d(&input_rt[poly[0] * 3], &input_rt[poly[1] * 3], &input_rt[poly[2] * 3],&input_rt[poly[3] * 3]);
             else orient_rt_input = orient_fp_input;
