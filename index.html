@@ -26,7 +26,7 @@
       -->
 
       <div>
-        <img src="teaser.png" id="teaser" alt="VOLMAP teaser" width="100%">
+        <center><img src="teaser.png" id="teaser" alt="VOLMAP teaser" width="100%"></center>
       
         <p id="info">
           VOLMAP is a large-scale benchmark aimed to support ongoing research in volume mapping algorithms. 
@@ -47,15 +47,15 @@
         </p>
 
         <div class="news-green">
-          <i>New: VOLMAP now also contains results obtained with some state-of-the-art volume mapping algorithms and new utilities to manage meshes with rational numbers. Check the "Results" tab!</i>
+          <i>New: VOLMAP now also contains <a href="https://volmap.github.io/viewer/" target="_blank">VOLMAP Viewer</a>: an online tool that you can use it to visualize and inspect your volume maps!</i>
         </div>
-
       </div>
 
       <article>
         <div class="tab">
           <button class="tablinks" onclick="openTab(event, 'Dataset')" id="defaultOpen"><h2>Dataset</h2></button>
           <button class="tablinks" onclick="openTab(event, 'Results')"><h2>Results</h2></button>
+            <button class="tablinks" onclick="openTab(event, 'Viewer')"><h2>Viewer</h2></button>
         </div>
         
         <div id="Dataset" class="tabcontent">
@@ -167,7 +167,7 @@
           <p class="info">
             <h3>Download links:</h3>
           </p>
-  
+
           <p class="info">
             <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G1/G1.zip" class="data">[G1.zip]</a>
             <a href="http://pers.ge.imati.cnr.it/livesu/VOLMAP/G1/G1_cube.zip" class="data">[G1_cube.zip]</a>
@@ -222,7 +222,7 @@
             <a href="https://github.com/cgg-bern/expansion-cones" target="_blank">Expansion Cones (EC)</a> and 
             <a href="https://github.com/SteffenHinderink/GalaxyMaps" target="_blank"> Galaxy Maps (GM)</a>.
             All experiments have been executed by considering the reference implementation released by the authors, which we tested on alternative 
-            input data that was not considered in the original articles. For more details refer to our new article:</p>
+            input data that was not considered in the original articles. For more details refer to our article:</p>
 
           <p class="info">
             <strong><a href="https://www.gianmarcocherchi.com/pdf/volume_mapping_comp.pdf" target="_blank" class="paperlink">To What Extent Are Existing Volume Mapping Algorithms Practically Useful?</a></strong><br>
@@ -261,7 +261,33 @@
           </p>  
 
         </div>
-      
+
+        <div id="Viewer" class="tabcontent">
+            <p class="info">
+                <i>VOLMAP Viewer</i> is a web-based tool for the visual assessment and analysis of maps between
+                tetrahedral meshes. You can load models directly in the browser and interact in real-time with both source
+                and target domains, check map validity, and compute the map quality according to a variety of popular
+                distortion metrics. Fundamental interaction features such as volume slicing and synchronized picking
+                are also possible: you can select any tetrahedron, highlighting the corresponding element on both domains
+                and inspecting its associated map distortion. For more details refer to our new article:
+            </p>
+
+            <p class="info">
+                <strong><a href="#" target="_blank" class="paperlink">VOLMAP Viewer: a Web-Based Interactive Visual Tool to Explore Volume Maps</a></strong><br>
+                <em>Proceedings of Smart Tools and Applications in Graphics (STAG 2025)</em><br>
+                Alberto Giacalone, Dylan Mulas, Federico Meloni, <a href="https://www.gianmarcocherchi.com/"  target="_blank">Gianmarco Cherchi</a>,
+                and <a href="http://pers.ge.imati.cnr.it/livesu/">Marco Livesu</a>
+            </p>
+
+            <p class="info">
+                <h3>Try VOLMAP Viewer now!</h3>
+            </p>
+
+            <a href="https://volmap.github.io/viewer/" target="_blank">
+                <center><img src="viewer.png" id="viewer-prev" alt="VOLMAP Viewer" width="80%"></center>
+            </a>
+        </div>
+
       </article>
 
 
@@ -465,33 +491,32 @@
         
       </article>
 
-    <article>
-      <h2 class="websection">External contributors</h2>
+      <article>
+        <h2 class="websection">External contributors</h2>
 
-      <p class="info">
-        Practitioners in volume mesh processing may extend the VOLMAP dataset either by providing additional meshes and their associated 
-        surface mappings, computed using our software tools, or can also provide additional mappings to alternative base domains. 
-        In <a href="custom_domain_instructions.html" target="_blank">this page</a> 
-        we explain how to exploit our software tools to define mappings to alternative base domains
-        currently not included in VOLMAP. Alternatively, users can define their own mappings with other facilities and then share 
-        their results with us and the rest of the community. 
-        
-        Furthermore, you can add the volume maps computed with your own algorithm!
-        
-      </p>
+          <p class="info">
+            Practitioners in volume mesh processing may extend the VOLMAP dataset either by providing additional meshes and their associated
+            surface mappings, computed using our software tools, or can also provide additional mappings to alternative base domains.
+            In <a href="custom_domain_instructions.html" target="_blank">this page</a>
+            we explain how to exploit our software tools to define mappings to alternative base domains
+            currently not included in VOLMAP. Alternatively, users can define their own mappings with other facilities and then share
+            their results with us and the rest of the community.
 
-      <p class="info">
-        To submit an extension, please send an email to g.cherchi[at]unica.it or marco.livesu[at]gmail.com, describing in detail the type of extension and providing
-        links to the data to download. We always suggest to verify the correctness of a given surface/volume map with our tools.
-        Nevertheless, we will always double-check he correctness of the new data prior to officially include it in VOLMAP.
-      </p>
-    </article>
+            Furthermore, you can add the volume maps computed with your own algorithm!
+          </p>
+
+          <p class="info">
+            To submit an extension, please send an email to g.cherchi[at]unica.it or marco.livesu[at]gmail.com, describing in detail the type of extension and providing
+            links to the data to download. We always suggest to verify the correctness of a given surface/volume map with our tools.
+            Nevertheless, we will always double-check he correctness of the new data prior to officially include it in VOLMAP.
+          </p>
+      </article>
 
       <article>
         <h2 class="websection">Cite us</h2>
 
         <p class="info">
-          If you use our data or code to develop and test your volume mapping algorithms, please consider citing our paper using the following BibTeX entry:
+          If you use our <b>data or code</b> to develop and test your volume mapping algorithms, please consider citing our paper using the following BibTeX entry:
         </p>
 
         <p class="code">
@@ -508,7 +533,7 @@
         </p>
 
         <p class="info">
-          Furthermore, if you use the results in VOLMAP to make comparisons in your papers, or if you use our utilities for rational numbers, please consider citing our paper using the following BibTeX entry:
+          If you use the <b>results in VOLMAP</b> to make comparisons in your papers, or if you use our <b>utilities for rational numbers</b>, please consider citing our paper using the following BibTeX entry:
         </p>
 
         <p class="code">
@@ -523,13 +548,30 @@
           }
         </p>
 
+        <p class="info">
+          Furthermore, if you use <b>VOLMAP Viewer</b> to visualize and inspect your maps, to debug your code or to create screenshot for you paper, please consider citing our paper using the following BibTeX entry:
+        </p>
+
+        <p class="code">
+          @inproceedings{GMMCL2025,<br>
+          <span>title     = {VOLMAP Viewer: a Web-Based Interactive Visual Tool to Explore Volume Maps},</span><br>
+          <span>author    = {Giacalone, Alberto and Mulas, Dylan and Meloni, Federico and </span><br>
+          <span><span><span><span>Cherchi, Gianmarco and Livesu, Marco},</span></span></span></span><br>
+          <span>booktitle = {Smart Tools and Applications in Graphics},</span><br>
+          <span>year      = {2025},</span><br>
+          <span>publisher = {The Eurographics Association},</span><br>
+          <span>issn      = {},</span><br>
+          <span>doi       = {}</span><br>
+          }
+        </p>
+
       </article>
 
       <footer>
         <div>Gianmarco Cherchi and Marco Livesu </div>
       </footer>
 
-    </div> 
+    </div>
 
 
     <script>
@@ -556,8 +598,6 @@
       // Get the element with id="defaultOpen" and click on it
       document.getElementById("defaultOpen").click();
     </script>
-
-
 
   </body>
 </html>
